@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
-# Minha ideia original era desenvolver em Python, mas Ruby foi escolhido pois em Python,
-# strings são imutáveis, e em Ruby, são mutáveis.
+# Minha ideia original era desenvolver em Python, mas Ruby foi escolhido pois 
+# era necessário alterar o próprio vetor, e em Python, strings são imutáveis, 
+# enquanto em Ruby são mutáveis. 
 
 def spacesPositions(string, string_len)
   count = []
