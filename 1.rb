@@ -5,41 +5,42 @@
 # enquanto em Ruby são mutáveis. 
 
 def spacesPositions(string, string_len)
-  count = []
-  0.upto(string_len-1).each { |i|
-    if string[i] == ' '
-      count.push(i)
-    end
-  }
-  return count
+  0.upto(string_len-1).select { |i| string[i] == ' ' }
 end
 
 def fromPosition(currentPosition, remainingSpaces)
-  return currentPosition - (remainingSpaces * 2)
+  currentPosition - (remainingSpaces*2)
 end
 
 if __FILE__ == $0
-  string = ARGV[0].dup
-  string_len = Integer(ARGV[1])
+  if ARGV.length < 2
+    puts "Exemplo de uso: ./1.rb 'Frase com espaco    ' 16"
+    return nil
+  end
+
+  string = ARGV[0].dup                                    # a string
+  string_len = Integer(ARGV[1])                           # tamanho real da str  
+  
   spaces_positions = spacesPositions(string, string_len)
-  remaining_spaces = spaces_positions.length
-  i = (string_len-1) + (remaining_spaces*2)
+  remaining_spaces = spaces_positions.length        
+  
+  to_pos = (string_len-1) + (remaining_spaces*2)
 
   while remaining_spaces > 0
-    from_position = fromPosition(i, remaining_spaces)
+    from_pos = fromPosition(to_pos, remaining_spaces)
 
-    if from_position != spaces_positions.last
-      string[i] = string[from_position]
-    else
-      spaces_positions.pop # O(1)
-      remaining_spaces -= 1
-      string[i] = '2'
-      string[i-1] = '3'
-      string[i-2] = '&'
-      i -= 2
+    if from_pos != spaces_positions.last 
+      string[to_pos] = string[from_pos]                   # just copy, O(1)
+    else # write &32, all O(1)
+      spaces_positions.pop  
+      remaining_spaces -= 1 
+      string[to_pos] = '2'  
+      string[to_pos-1] = '3'
+      string[to_pos-2] = '&'
+      to_pos -= 2
     end
 
-    i -= 1
+    to_pos -= 1
   end
 
   puts string

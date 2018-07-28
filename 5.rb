@@ -10,7 +10,6 @@ class Node
 end
 
 class LinkedList
-
   def initialize(val)
     @head = Node.new(val, nil)
   end
@@ -21,30 +20,6 @@ class LinkedList
       current = current.next
     end
     current.next = Node.new(val, nil)
-  end
-
-  def delete(val)
-    current.next = @head
-    if current.val = val
-      @head = current.next
-    else
-      while (current.next != nil) && (current.next.val != val)
-        current = current.next
-      end
-      unless current.next == nil
-        current.next = current.next.next
-      end
-    end
-  end
-
-  def return_list
-    elements = []
-    current = @head
-    while current.next != nil
-      elements << current
-      current = current.next
-    end
-    elements << current
   end
 
   def pretty_print
@@ -73,6 +48,11 @@ class LinkedList
 end
 
 if __FILE__ == $0
+  if ARGV.length == 0
+    puts "Exemplo de uso: ./5.rb 1 2 3 5 4 3 2"
+    return nil
+  end
+  
   linkedlist = LinkedList.new(ARGV[0])  # at least 1 element is obligatory
 
   ARGV.each_with_index { |val, i| 

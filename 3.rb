@@ -29,6 +29,11 @@ def isTypo(original_string, typo_string)
 end
 
 if __FILE__ == $0
+  if ARGV.length < 2
+    puts "Exemplo de uso: ./3.rb casa cama"
+    return nil
+  end
+
   string1 = ARGV[0]
   string2 = ARGV[1]
   puts isTypo(string1, string2)
