@@ -82,7 +82,7 @@ na última (n), 0 operações.
 
 Portanto, a quantidade total de operações é delimitada por
 
-    n - 1 + n - 2 + n - 3 + ... + n - n
+    (n - 1) + (n - 2) + (n - 3) + ... + (n - n)
 
 Agrupando os n:
 
@@ -97,4 +97,3 @@ Temos então uma complexidade temporal de O(n² - n/2), que é o mesmo que O(n²
 Enfim, por causa da complexidade temporal de remove_dup, a complexidade temporal do algoritmo completo é O(n²).
  
 A complexidade espacial é a complexidade espacial da lista encadeada: O(n).
- 
