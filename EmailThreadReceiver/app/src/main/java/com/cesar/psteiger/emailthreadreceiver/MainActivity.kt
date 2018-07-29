@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         helloWorldTextView.text = "Sending email thread $emailThread to other app service."
     }
 
-
     override fun onStart() {
         super.onStart()
 
