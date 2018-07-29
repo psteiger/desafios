@@ -1,6 +1,5 @@
 package com.cesar.psteiger.emailprocessorservice
 
-git init
 class MyLinkedList<T>(firstElement: T) {
 
     inner class Node(val value: T, var next: Node?)
