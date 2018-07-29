@@ -1,7 +1,5 @@
 package com.cesar.psteiger.emailprocessorservice
 
-import android.util.Log
-
 class MyLinkedList<T>(firstElement: T) {
 
     inner class Node(val value: T, var next: Node?)
