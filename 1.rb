@@ -14,12 +14,12 @@ end
 
 if __FILE__ == $0
   if ARGV.length < 2
-    puts "Exemplo de uso: ./1.rb 'Frase com espaco    ' 16"
+    puts "Example: ./1.rb 'Frase com espaco    ' 16"
     return nil
   end
 
-  string = ARGV[0].dup                                    # a string
-  string_len = Integer(ARGV[1])                           # tamanho real da str  
+  string = ARGV[0].dup                                    # the string
+  string_len = Integer(ARGV[1])                           # real str length  
   
   spaces_positions = spacesPositions(string, string_len)
   remaining_spaces = spaces_positions.length        

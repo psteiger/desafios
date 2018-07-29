@@ -31,6 +31,7 @@ class LinkedList
 
   def intersection(linkedList)
     current = @head
+
     while current != nil
       return current if linkedList.hasNode(current)
       current = current.next
@@ -40,6 +41,7 @@ class LinkedList
 
   def add(val)
     current = @head
+
     while current.next != nil
       current = current.next
     end
@@ -57,24 +59,9 @@ class LinkedList
 
   def pretty_print
     current = @head
+
     while current != nil
       print current.val.to_s + ' '
-      current = current.next
-    end
-  end
-
-  def remove_dup
-    current = @head
-    while current != nil && current.next != nil
-      ptr = current
-      while ptr.next != nil
-        if current.val == ptr.next.val
-          dup = ptr.next
-          ptr.next = ptr.next.next
-        else
-          ptr = ptr.next
-        end
-      end
       current = current.next
     end
   end
@@ -89,10 +76,10 @@ if __FILE__ == $0
   linkedList1.add(14)
   linkedList1.addNode(intersectingTail)
 
-  linkedList2 = LinkedList.new(20)  # at least 1 element is obligatory
+  linkedList2 = LinkedList.new(20)
 
   linkedList2.add(22)
-  linkedList2.add(14) # mesmo valor, objeto distinto
+  linkedList2.add(14) # same value, distinct object
   linkedList2.addNode(intersectingTail)
 
   puts "First list: " 

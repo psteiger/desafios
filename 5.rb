@@ -16,6 +16,7 @@ class LinkedList
 
   def add(val)
     current = @head
+    
     while current.next != nil
       current = current.next
     end
@@ -24,6 +25,7 @@ class LinkedList
 
   def pretty_print
     current = @head
+    
     while current != nil
       print current.val.to_s + ' '
       current = current.next
@@ -32,8 +34,10 @@ class LinkedList
 
   def remove_dup
     current = @head
+    
     while current != nil && current.next != nil
       ptr = current
+
       while ptr.next != nil
         if current.val == ptr.next.val
           dup = ptr.next
@@ -42,6 +46,7 @@ class LinkedList
           ptr = ptr.next
         end
       end
+
       current = current.next
     end
   end
@@ -49,7 +54,7 @@ end
 
 if __FILE__ == $0
   if ARGV.length == 0
-    puts "Exemplo de uso: ./5.rb 1 2 3 5 4 3 2"
+    puts "Example: ./5.rb 1 2 3 5 4 3 2"
     return nil
   end
   
