@@ -1,5 +1,19 @@
 # desafios
 
+## Observações Gerais
+
+Algoritmos dos exercícios 1, 2, 3, 5 e 7 foram desenvolvidos em Ruby.
+
+Programas Android foram desenvolvidos em Kotlin utilizando Android Studio Beta 2.
+
+Exercício 4 = SearchOnList
+
+Exercício 6 = EmailProcessorService
+
+Um app demo de uso do serviço do exercício 6 em EmailThreadReceiver
+
+Cada programa em Ruby imprime um guia de uso dos parâmetros se chamado sem parâmetro.
+
 ## Análise de Complexidade de Tempo e Espaço
 
 Deve-se levar em consideração que as operações select, chars criam um array auxiliar ao invés de modificar o próprio. Por isso, são sempre O(n) em espaço.
@@ -36,7 +50,7 @@ A função
     def upToTwoThirdsJumbled(string1, string2)
     
 1. Converte a string em um array de caracteres (O(n) em tempo e espaço)
-2. Percorre o resultado realizando comparações constantes (O(1) em tempo e espaço)
+2. Percorre o resultado realizando comparações constantes (O(1) em tempo, O(1) em espaço auxiliar)
 
 Portanto, sua complexidade temporal e espacial é O(n) em todos casos.
 
@@ -55,7 +69,7 @@ Portanto, a complexidade espacial do algoritmo é O(n) em todos casos, e a compl
 Há 2 tipos de operações não-constantes:
 
 1. Conversão de string para array de chars - O(n) em tempo e espaço.
-2. Iteração com each_with_index na string realizando operações constantes dentro do loop - O(n) em tempo, O(1) em espaço.
+2. Iteração com each_with_index na string realizando operações constantes dentro do loop - O(n) em tempo, O(1) em espaço auxiliar.
 
 Portanto, complexidade temporal e espacial O(n).
 
@@ -65,7 +79,7 @@ As operações relevantes são:
 
 1. Criação da lista encadeada com 1 elemento - O(1) em tempo e espaço.
 2. Adicionar novo elemento - O(n) em tempo e O(1) em espaço, pois sempre adiciona na cauda e temos apenas acesso à cabeça.
-3. Um loop each_with_index que adiciona novo elemento na lista - O(n) em tempo para percorrer o loop, e operação O(n) em tempo dentro do loop. Portanto, O(n²) em tempo e O(1) em espaço.
+3. Um loop each_with_index que adiciona novo elemento na lista - O(n) em tempo para percorrer o loop, e operação O(n) em tempo dentro do loop. Portanto, O(n²) em tempo e O(1) em espaço auxiliar.
 4. remove_dup merece análise mais profunda:
 
 remove_dup percorre o array, ou seja, itera n vezes.
@@ -96,4 +110,11 @@ Temos então uma complexidade temporal de O(n² - n/2), que é o mesmo que O(n²
  
 Enfim, por causa da complexidade temporal de remove_dup, a complexidade temporal do algoritmo completo é O(n²).
  
-A complexidade espacial é a complexidade espacial da lista encadeada: O(n).
+A complexidade espacial é a complexidade espacial da lista encadeada (input): O(n).
+
+### 7.rb
+
+No melhor caso, as listas são idênticas, isto é, a interseção ocorre já no primeiro nó. Complexidade temporal O(1) e complexidade espacial de input O(m+n) (não hã espaço auxiliar não-constante necessário)
+
+No pior caso, não há interseção: o algoritmo precisa percorrer todos os elementos de ambas as listas. Complexidade temporal O(m * n) e complexidade espacial de input O(m+n) (não há espaço auxiliar não-constante necessário)
+

@@ -10,6 +10,7 @@ import androidx.appcompat.widget.SearchView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
+
 class MainActivity : AppCompatActivity() {
 
     private var item: ArrayList<String> = arrayListOf()
@@ -40,7 +41,6 @@ class MainActivity : AppCompatActivity() {
         itemAdapter = ItemAdapter(this, R.layout.list_item, item)
         list.adapter = itemAdapter
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.list_menu, menu)
