@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
 # Minha ideia original era desenvolver em Python, mas Ruby foi escolhido pois 
-# era necessário alterar o próprio vetor, e em Python, strings são imutáveis, 
-# enquanto em Ruby são mutáveis. 
+# era necessário alterar o próprio vetor, e ao contrário de Python, em Ruby
+# strings são objetos mutáveis.
 
 def spacesPositions(string, string_len)
   0.upto(string_len-1).select { |i| string[i] == ' ' }
