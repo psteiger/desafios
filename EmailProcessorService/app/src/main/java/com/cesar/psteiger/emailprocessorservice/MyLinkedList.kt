@@ -15,7 +15,6 @@ class MyLinkedList<T>(firstElement: T) {
             current = current.next!!
 
         current.next = Node(value, null)
-
     }
 
     fun removeDup() {
