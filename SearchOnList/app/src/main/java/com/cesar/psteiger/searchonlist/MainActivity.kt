@@ -10,7 +10,6 @@ import androidx.appcompat.widget.SearchView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
-
 class MainActivity : AppCompatActivity() {
 
     private var item: ArrayList<String> = arrayListOf()
@@ -23,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         }
     private var searchView: SearchView? = null
     private var queryTextListener: SearchView.OnQueryTextListener? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
