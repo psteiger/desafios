@@ -1,6 +1,5 @@
 package com.cesar.psteiger.emailprocessorservice
 
-git init
 class MyLinkedList<T>(firstElement: T) {
 
     inner class Node(val value: T, var next: Node?)
@@ -23,10 +22,14 @@ class MyLinkedList<T>(firstElement: T) {
             var ptr: Node = current
 
             while (ptr.next != null) {
-                if (current.value == ptr.next!!.value)
-                    ptr.next = ptr.next!!.next
-                else
-                    ptr = ptr.next!!
+                val nextNode = ptr.next!!
+
+                if (current.value == nextNode.value) {
+                    ptr.next = nextNode.next
+                    nextNode.next = null // keep no ref, allow garbage collector to destroy it
+                } else {
+                    ptr = nextNode
+                }
             }
 
             current = current.next
