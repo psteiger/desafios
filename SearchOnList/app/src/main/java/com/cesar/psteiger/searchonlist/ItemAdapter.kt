@@ -72,7 +72,7 @@ class ItemAdapter(ctx: Context,
 
     private fun String.isPermutation(other: String) =
             length == other.length &&
-            toCharArray().sort() == other.toCharArray().sort() &&
+            toList().sorted() == other.toList().sorted() &&
                     get(0) == other[0] &&
                     (length <= 3 || upToTwoThirdsJumbled(other))
 
@@ -82,7 +82,7 @@ class ItemAdapter(ctx: Context,
         val isPermutation = withoutAccents.isPermutation(text.withoutAccents)
         val isOneTypo = withoutAccents.isTypo(text.withoutAccents)
 
-        Log.e("matchesQuery", "perm = $isPermutation ; typo = $isOneTypo" )
+        Log.e("matchesQuery", "$text $this permutation = $isPermutation ; typo = $isOneTypo" )
         return (isPermutation && !isOneTypo) || (!isPermutation && isOneTypo)
     }
 
@@ -102,7 +102,7 @@ class ItemAdapter(ctx: Context,
         }
 
         override fun publishResults(constraint: CharSequence, results: Filter.FilterResults) {
-            filteredItems = results.values as ArrayList<String>
+            filteredItems = results.values as? ArrayList<String>? ?: arrayListOf()
             notifyDataSetChanged()
         }
     }
