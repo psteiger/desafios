@@ -114,7 +114,7 @@ A complexidade espacial é a complexidade espacial da lista encadeada (input): O
 
 ### 7.rb
 
-No melhor caso, as listas são idênticas, isto é, a interseção ocorre já no primeiro nó. Complexidade temporal O(1) e complexidade espacial de input O(m+n) (não hã espaço auxiliar não-constante necessário)
+No melhor caso, as listas são idênticas, isto é, a interseção ocorre já no primeiro nó. Complexidade temporal O(1) e complexidade espacial de input O(m+n) (não há espaço auxiliar não-constante necessário)
 
 No pior caso, não há interseção: o algoritmo precisa percorrer todos os elementos de ambas as listas. Complexidade temporal O(m * n) e complexidade espacial de input O(m+n) (não há espaço auxiliar não-constante necessário)
 
